@@ -6,6 +6,7 @@ from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import os
 import sys, traceback
+from typing import TypedDict
 from ibm_watson import ApiException
 from dotenv import load_dotenv
 
@@ -27,31 +28,34 @@ def initialize_translator():
         version=API_VERSION,
         authenticator=authenticator)
 
-    return language_translator.set_service_url(URL)
+    language_translator.set_service_url(URL)
+    return language_translator
 
-def english_to_french(text:str, translator: LanguageTranslatorV3) -> DetailedResponse:
+def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate English text to French. 
     """
     model_id = 'en-fr'
     source_lang = 'en'
-    return translator.translate(
-            text,
-            model_id,
-            source_lang
-            ).get_result()
+    res = translator.translate(
+            text=text,
+            model_id=model_id,
+            source=source_lang).get_result()
+    print(json.dumps(res, indent=2, ensure_ascii=False))
+    return res
 
-def french_to_english(text:str, translator: LanguageTranslatorV3) -> DetailedResponse:
+def french_to_english(text:str, translator: LanguageTranslatorV3) -> LanguageTranslatorV3:
     """
     Function for translate French text to English. 
     """
     model_id = 'fr-en'
     source_lang = 'fr'
-    return translator.translate(
-            text,
-            model_id,
-            source_lang
-            ).get_result()
+    res = translator.translate(
+            text=text,
+            model_id=model_id,
+            source=source_lang).get_result()
+    print(json.dumps(res, indent=2, ensure_ascii=False))
+    return res
 
 #try-catch
 try:
@@ -60,12 +64,12 @@ try:
 
     tlator = initialize_translator()
     trToFr = english_to_french(enText, tlator)
-    trToEn = french_to_english(frText, tlator)
+    #trToEn = french_to_english(frText, tlator)
 
 except ApiException as ex:
 
     if type(ex) == ApiException:
-        print "Method failed with status code " + str(ex.code) + ": " + ex.message
+        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
     else:
         print(ex)
         print(traceback.format_exc())
