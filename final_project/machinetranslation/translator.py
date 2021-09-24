@@ -32,11 +32,11 @@ def initialize_translator() -> LanguageTranslatorV3:
     
         return language_translator
 
-    except Exception as ex:
+    except ApiException as ex:
 
-        if type(ex) == ApiException:
             print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-        else:
+        
+    except Exception as ex:
             print(ex)
             print(traceback.format_exc())
 
