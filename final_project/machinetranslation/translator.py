@@ -24,36 +24,36 @@ def initialize_translator() -> LanguageTranslatorV3:
     return with translator instance.
     """
     try:
-    authenticator = IAMAuthenticator(APIKEY)
-    language_translator = LanguageTranslatorV3(
+        authenticator = IAMAuthenticator(APIKEY)
+        language_translator = LanguageTranslatorV3(
         version=API_VERSION,
         authenticator=authenticator)
+        
+        language_translator.set_service_url(URL)
     
-    language_translator.set_service_url(URL)
-    
-    return language_translator
+        return language_translator
 
     except Exception as ex:
 
-    if type(ex) == ApiException:
-        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-    else:
-        print(ex)
-        print(traceback.format_exc())
+        if type(ex) == ApiException:
+            print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
+        else:
+            print(ex)
+            print(traceback.format_exc())
 
 def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate English text to French. 
     """
     try:
-    model_id = 'en-fr'
-    source_lang = 'en'
-    res = translator.translate(
-            text=text,
-            model_id=model_id,
-            source=source_lang).get_result()
-    print(json.dumps(res, indent=2, ensure_ascii=False))
-    return res
+        model_id = 'en-fr'
+        source_lang = 'en'
+        res = translator.translate(
+                text=text,
+                model_id=model_id,
+                source=source_lang).get_result()
+        print(json.dumps(res, indent=2, ensure_ascii=False))
+        return res
     
     except Exception as ex:
         print(ex)
@@ -64,14 +64,14 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     Function for translate French text to English. 
     """
     try:
-    model_id = 'fr-en'
-    source_lang = 'fr'
-    res = translator.translate(
-            text=text,
-            model_id=model_id,
-            source=source_lang).get_result()
-    print(json.dumps(res, indent=2, ensure_ascii=False))
-    return res
+        model_id = 'fr-en'
+        source_lang = 'fr'
+        res = translator.translate(
+                text=text,
+                model_id=model_id,
+                source=source_lang).get_result()
+        print(json.dumps(res, indent=2, ensure_ascii=False))
+        return res
 
     except Exception as ex:
         print(ex)
