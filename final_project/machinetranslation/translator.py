@@ -76,20 +76,20 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
         print(ex)
         print(traceback.format_exc())
 #try-catch
-#try:
-#    enText = 'This is a shiny day.'
-#    frText = 'C\'est un jour soleil.'
-#
-#    tlator = initialize_translator()
-#    trToFr = english_to_french(enText, tlator)
-#    #trToEn = french_to_english(frText, tlator)
-#
-#except ApiException as ex:
-#
-#    if type(ex) == ApiException:
-#        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-#    else:
-#        print(ex)
-#        print(traceback.format_exc())
-#
-#
+try:
+    enText = 'This is a shiny day.'
+    frText = 'C\'est un jour soleil.'
+
+    tlator = initialize_translator()
+    trToFr = english_to_french(enText, tlator)
+    #trToEn = french_to_english(frText, tlator)
+
+except ApiException as ex:
+
+    if type(ex) == ApiException:
+        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
+    else:
+        print(ex)
+        print(traceback.format_exc())
+
+
