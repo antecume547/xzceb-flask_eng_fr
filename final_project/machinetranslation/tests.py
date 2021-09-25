@@ -42,7 +42,7 @@ class TestIBMTranslator(unittest.TestCase):
             raise Exception('The instance of translator has not initialized!')
 
         test_val = 'Hello'
-        expected_val = 'Bonnjour'
+        expected_val = 'Bonjour'
         self.assertEqual(english_to_french(test_val, translator_instance)['translations'][0]['translation'], expected_val)
 
         test_val = 'I\'m going farther'
