@@ -20,7 +20,7 @@ class TestIBMTranslator(unittest.TestCase):
        
         test_val = 'Bonjour'
         expected_val = 'God day'
-        self.assertEqual(french_to_english(translator_instance,test_val), expected_val)
+        self.assertEqual(french_to_english(translator_instance,str(test_val)), expected_val)
     
         test_val = 'colere'
         expected_val = 'anger'
