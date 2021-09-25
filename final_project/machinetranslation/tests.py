@@ -1,6 +1,6 @@
 import unittest
 from translator import *
-
+from ibm_watson import ApiException
 
 class TestIBMTranslator(unittest.TestCase):
 
