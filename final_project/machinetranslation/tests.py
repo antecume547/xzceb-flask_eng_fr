@@ -34,7 +34,7 @@ class TestIBMTranslator(unittest.TestCase):
             test_val = None
             french_to_english(test_val, translator_instance)
 
-def test_english_to_french(self):
+    def test_english_to_french(self):
         URL = os.environ['URL']
         translator_instance = initialize_translator();
         
