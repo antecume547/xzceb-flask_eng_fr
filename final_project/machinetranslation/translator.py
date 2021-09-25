@@ -1,13 +1,15 @@
 """
 Module for initializing IBM Watson Language Translator 
 """
-import json
 import os
-import sys, traceback
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-from ibm_watson import ApiException
 from dotenv import load_dotenv
+
+#import these for debugging purpose 
+#import sys, traceback
+#import json
+#from ibm_watson import ApiException
 
 #get envars
 load_dotenv()
