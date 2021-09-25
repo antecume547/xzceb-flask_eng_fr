@@ -22,17 +22,17 @@ def initialize_translator() -> LanguageTranslatorV3:
     Function for instantiate the Translator. It gets global variables to authenticating and
     return with translator instance.
     """
-    try:
-        authenticator = IAMAuthenticator(APIKEY)
-        language_translator = LanguageTranslatorV3(
-        version=API_VERSION,
-        authenticator=authenticator)
-        
-        language_translator.set_service_url(URL)
+#    try:
+    authenticator = IAMAuthenticator(APIKEY)
+    language_translator = LanguageTranslatorV3(
+    version=API_VERSION,
+    authenticator=authenticator)
     
-        return language_translator
+    language_translator.set_service_url(URL)
 
-    except ApiException as ex:
+    return language_translator
+
+#    except ApiException as ex:
 
             print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
         
