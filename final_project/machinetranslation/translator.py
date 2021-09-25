@@ -27,7 +27,6 @@ def initialize_translator() -> LanguageTranslatorV3:
     language_translator = LanguageTranslatorV3(
     version=API_VERSION,
     authenticator=authenticator)
-    print('*****', URL)    
     language_translator.set_service_url(URL)
 
     return language_translator

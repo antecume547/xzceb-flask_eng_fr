@@ -20,7 +20,7 @@ class TestIBMTranslator(unittest.TestCase):
         self.assertIsInstance(initialize_translator(), LanguageTranslatorV3)
         
         with self.assertRaises(ApiException):
-            URL = os.environ['URL'] + 'some_tail'
+            global URL = os.environ['URL'] + 'some_tail'
             print(URL)
             initialize_translator()
     
