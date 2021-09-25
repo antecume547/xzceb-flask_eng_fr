@@ -1,11 +1,10 @@
 import json
 import os
-import sys, traceback
+import unittest
 from ibm_watson import LanguageTranslatorV3
 from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_watson import ApiException
 from dotenv import load_dotenv
-import unittest
 from translator import initialize_translator, french_to_english, english_to_french
 #get envars
 load_dotenv()
@@ -14,7 +13,7 @@ load_dotenv()
 APIKEY = os.environ['APIKEY']
 URL = os.environ['URL']
 API_VERSION = os.environ['API_VERSION']
-#from translator import *
+
 class TestIBMTranslator(unittest.TestCase):
 
     def test_initialize_translator(self):
