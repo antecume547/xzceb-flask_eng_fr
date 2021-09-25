@@ -34,7 +34,7 @@ def initialize_translator() -> LanguageTranslatorV3:
 
 def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
-    Function for translate English text to French. 
+    Function for translate English text to French.
     """
     model_id = 'en-fr'
     source_lang = 'en'
@@ -44,11 +44,11 @@ def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
             source=source_lang).get_result()
 #    print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
-    
+
 
 def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     """
-    Function for translate French text to English. 
+    Function for translate French text to English.
     """
     model_id = 'fr-en'
     source_lang = 'fr'
@@ -59,7 +59,7 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
 #    print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
 
-#try-catch for debugging purpose 
+#try-catch for debugging purpose
 #try:
 #    enText = 'This is a shiny day.'
 #    frText = 'C\'est un jour soleil.'
@@ -70,7 +70,6 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
 #except ApiException as ex:
 #
 #        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-#    
 #except Exception as ex:
 #        print(ex)
 #        print(traceback.format_exc())
