@@ -28,7 +28,7 @@ def initialize_translator() -> LanguageTranslatorV3:
         version=API_VERSION,
         authenticator=authenticator)
         uri = os.environ['URL'] + 'some_trail'
-        language_translator.set_service_url()
+        language_translator.set_service_url(uri)
 
         return language_translator
 
