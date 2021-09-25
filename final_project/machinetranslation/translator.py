@@ -1,5 +1,5 @@
 """
-module for initializing IBM Watson Language Translator 
+Module for initializing IBM Watson Language Translator 
 """
 import json
 import os

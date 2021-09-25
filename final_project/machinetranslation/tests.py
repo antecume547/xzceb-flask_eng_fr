@@ -1,3 +1,6 @@
+"""
+Unit test Module to the translator module
+"""
 import json
 import os
 import unittest
@@ -16,7 +19,7 @@ API_VERSION = os.environ['API_VERSION']
 
 class TestIBMTranslator(unittest.TestCase):
     """
-    Class for tesing translator modul's functions 
+    Class for unittesting translator module's functions 
     """
     def test_initialize_translator(self):
         """
@@ -36,8 +39,7 @@ class TestIBMTranslator(unittest.TestCase):
        
         test_val = 'Bonjour'
         expected_val = 'Hello'
-        msg = 'The test passed'
-        self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val,msg)
+        self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
     
         test_val = 'maison'
         expected_val = 'House'
