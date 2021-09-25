@@ -12,6 +12,7 @@ class TestIBMTranslator(unittest.TestCase):
             initialize_translator()
     
     def test_french_to_english(self):
+        URL = os.environ['URL']
         translator_instance = initialize_translator();
        
         test_val = 'Bonjour'
@@ -31,6 +32,7 @@ class TestIBMTranslator(unittest.TestCase):
         self.assertEquale(french_to_english(translator_instance,test_val), expected_val))
 
 def test_ english_to_french(self):
+        URL = os.environ['URL']
         translator_instance = initialize_translator();
         test_val = 'Good day'
         expected_val = 'Bonnjour'
