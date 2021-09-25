@@ -19,11 +19,6 @@ class TestIBMTranslator(unittest.TestCase):
     def test_initialize_translator(self):
         self.assertIsInstance(initialize_translator(), LanguageTranslatorV3)
         
-        with self.assertRaises(ApiException):
-            globals()['URL'] = os.environ['URL'] + 'some_tail'
-            print(URL)
-            initialize_translator()
-    
     def test_french_to_english(self):
         URL = os.environ['URL']
         translator_instance = initialize_translator();
