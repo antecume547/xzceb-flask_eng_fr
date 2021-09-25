@@ -50,11 +50,11 @@ class TestIBMTranslator(unittest.TestCase):
         self.assertEqual(english_to_french(test_val, translator_instance)['translations'][0]['translation'], expected_val)
 
         test_val = 'dog'
-        expected_val = 'chien'
+        expected_val = 'Chien'
         self.assertEqual(english_to_french(test_val, translator_instance)['translations'][0]['translation'], expected_val)
 
         test_val = 'feather'
-        expected_val = 'plume'
+        expected_val = 'Plume'
         self.assertEqual(english_to_french(test_val, translator_instance)['translations'][0]['translation'], expected_val)
 
         with self.assertRaises(ValueError):
