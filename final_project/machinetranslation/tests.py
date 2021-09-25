@@ -19,43 +19,43 @@ class TestIBMTranslator(unittest.TestCase):
             raise Exception('The instance of translator has not initialized!')
        
         test_val = 'Bonjour'
-        expected_val = 'God day'
-        self.assertEqual(french_to_english(translator_instance,str(test_val)), expected_val)
+        expected_val = 'Good day'
+        self.assertEqual(french_to_english(test_val, translator_instance), expected_val)
     
         test_val = 'colere'
         expected_val = 'anger'
-        self.assertEqual(french_to_english(translator_instance,test_val), expected_val)
+        self.assertEqual(french_to_english(test_val, translator_instance), expected_val)
         
         test_val = 'racine'
         expected_val = 'root'
-        self.assertEqual(french_to_english(translator_instance,test_val), expected_val)
+        self.assertEqual(french_to_english(test_val, translator_instance), expected_val)
         
         test_val = None
         expected_val = None
-        self.assertEqual(french_to_english(translator_instance,test_val), expected_val)
+        self.assertEqual(french_to_english(test_val, translator_instance), expected_val)
 
 def test_english_to_french(self):
         URL = os.environ['URL']
         translator_instance = initialize_translator();
         test_val = 'Good day'
         expected_val = 'Bonnjour'
-        self.assertEqual(english_to_french(translator_instance,test_val), expected_val)
+        self.assertEqual(english_to_french(test_val, translator_instance), expected_val)
 
         test_val = 'I\'m going farther'
         expected_val = 'Je vais plus loin'
-        self.assertEqual(english_to_french(translator_instance,test_val), expected_val)
+        self.assertEqual(english_to_french(test_val, translator_instance), expected_val)
 
         test_val = 'dog'
         expected_val = 'chien'
-        self.assertEqual(english_to_french(translator_instance,test_val), expected_val)
+        self.assertEqual(english_to_french(test_val, translator_instance), expected_val)
 
         test_val = 'feather'
         expected_val = 'plume'
-        self.assertEqual(english_to_french(translator_instance,test_val), expected_val)
+        self.assertEqual(english_to_french(test_val, translator_instance), expected_val)
 
         test_val = None
         expected_val = None
-        self.assertEqual(english_to_french(translator_instance,test_val), expected_val)
+        self.assertEqual(english_to_french(test_val, translator_instance), expected_val)
 
 if __name__ == '__main__':
     unittest.main()
