@@ -27,7 +27,7 @@ def initialize_translator() -> LanguageTranslatorV3:
         language_translator = LanguageTranslatorV3(
         version=API_VERSION,
         authenticator=authenticator)
-        language_translator.set_service_url(URL)
+        language_translator.set_service_url('hhh')
 
         return language_translator
 
@@ -43,7 +43,6 @@ def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate English text to French. 
     """
-#    try:
     model_id = 'en-fr'
     source_lang = 'en'
     res = translator.translate(
@@ -53,15 +52,11 @@ def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
     
-#    except Exception as ex:
-#        print(ex)
-#        print(traceback.format_exc())
 
 def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate French text to English. 
     """
-#    try:
     model_id = 'fr-en'
     source_lang = 'fr'
     res = translator.translate(
@@ -71,10 +66,7 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
 
-#    except Exception as ex:
-#        print(ex)
-#        print(traceback.format_exc())
-#try-catch
+#try-catch for testing puspose
 #try:
 #    enText = 'This is a shiny day.'
 #    frText = 'C\'est un jour soleil.'
