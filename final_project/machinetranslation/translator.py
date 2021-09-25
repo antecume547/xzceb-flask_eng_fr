@@ -23,14 +23,14 @@ def initialize_translator() -> LanguageTranslatorV3:
     return with translator instance.
     """
 #    try:
-        authenticator = IAMAuthenticator(APIKEY)
-        language_translator = LanguageTranslatorV3(
-        version=API_VERSION,
-        authenticator=authenticator)
-        
-        language_translator.set_service_url(URL)
+    authenticator = IAMAuthenticator(APIKEY)
+    language_translator = LanguageTranslatorV3(
+    version=API_VERSION,
+    authenticator=authenticator)
     
-        return language_translator
+    language_translator.set_service_url(URL)
+
+    return language_translator
 
 #    except ApiException as ex:
 #
