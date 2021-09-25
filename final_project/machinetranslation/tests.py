@@ -23,11 +23,11 @@ class TestIBMTranslator(unittest.TestCase):
         self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
     
         test_val = 'maison'
-        expected_val = 'house'
+        expected_val = 'House'
         self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
         
         test_val = 'racine'
-        expected_val = 'root'
+        expected_val = 'Root'
         self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
         
         test_val = None
