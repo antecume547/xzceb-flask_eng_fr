@@ -1,14 +1,13 @@
 import unittest
 from translator import *
 from ibm_watson import ApiException
-
+URL = os.environ['URL'] + 'some_tail'
 class TestIBMTranslator(unittest.TestCase):
 
     def test_initialize_translator(self):
         self.assertIsInstance(initialize_translator(), LanguageTranslatorV3)
         
         with self.assertRaises(ApiException):
-            URL = os.environ['URL'] + 'some_tail'
             print(URL)
             initialize_translator()
     
@@ -17,7 +16,7 @@ class TestIBMTranslator(unittest.TestCase):
         translator_instance = initialize_translator();
         
         if translator_instance == None:
-            raise Exception('The instance of translator has not initialized!')
+            raise Exception('Instance of translator has not initialized!')
        
         test_val = 'Bonjour'
         expected_val = 'Hello'
