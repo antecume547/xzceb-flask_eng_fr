@@ -62,19 +62,19 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate French text to English. 
     """
-    try:
-        model_id = 'fr-en'
-        source_lang = 'fr'
-        res = translator.translate(
-                text=text,
-                model_id=model_id,
-                source=source_lang).get_result()
-        print(json.dumps(res, indent=2, ensure_ascii=False))
-        return res
+#    try:
+    model_id = 'fr-en'
+    source_lang = 'fr'
+    res = translator.translate(
+            text=text,
+            model_id=model_id,
+            source=source_lang).get_result()
+    print(json.dumps(res, indent=2, ensure_ascii=False))
+    return res
 
-    except Exception as ex:
-        print(ex)
-        print(traceback.format_exc())
+#    except Exception as ex:
+#        print(ex)
+#        print(traceback.format_exc())
 #try-catch
 #try:
 #    enText = 'This is a shiny day.'
