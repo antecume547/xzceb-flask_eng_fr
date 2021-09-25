@@ -15,12 +15,20 @@ URL = os.environ['URL']
 API_VERSION = os.environ['API_VERSION']
 
 class TestIBMTranslator(unittest.TestCase):
-
+    """
+    Class for tesing translator modul's functions 
+    """
     def test_initialize_translator(self):
+        """
+        testing if initialize_translator() function returns with type LanguageTranslatorV3  
+        """
         self.assertIsInstance(initialize_translator(), LanguageTranslatorV3)
         
     def test_french_to_english(self):
-        URL = os.environ['URL']
+        """
+        Testing if the french_to_english function returns with the appropriate values and if throws the ValueError exception
+        when the parameter is None object
+        """
         translator_instance = initialize_translator();
         
         if translator_instance == None:
@@ -43,6 +51,10 @@ class TestIBMTranslator(unittest.TestCase):
             french_to_english(test_val, translator_instance)
 
     def test_english_to_french(self):
+        """
+        Testing if the english_to_french function returns with the appropriate values and if throws the ValueError exception
+        when the parameter is None object
+        """
         URL = os.environ['URL']
         translator_instance = initialize_translator();
         

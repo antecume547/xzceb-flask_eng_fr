@@ -30,7 +30,6 @@ def initialize_translator() -> LanguageTranslatorV3:
 
     return language_translator
 
-
 def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
     Function for translate English text to French. 
@@ -58,7 +57,7 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
     print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
 
-#try-catch for testing puspose
+#try-catch for debugging purpose 
 #try:
 #    enText = 'This is a shiny day.'
 #    frText = 'C\'est un jour soleil.'
