@@ -14,6 +14,9 @@ class TestIBMTranslator(unittest.TestCase):
     def test_french_to_english(self):
         URL = os.environ['URL']
         translator_instance = initialize_translator();
+        print(type(translator_instance))
+        if translator_instance == None:
+            raise Exception('The instance of translator has not initialized!')
        
         test_val = 'Bonjour'
         expected_val = 'God day'
