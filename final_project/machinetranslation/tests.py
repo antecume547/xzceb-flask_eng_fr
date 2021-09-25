@@ -9,6 +9,7 @@ class TestIBMTranslator(unittest.TestCase):
         
         with self.assertRaises(ApiException):
             URL = os.environ['URL'] + 'some_tail'
+            print(URL)
             initialize_translator()
     
     def test_french_to_english(self):
