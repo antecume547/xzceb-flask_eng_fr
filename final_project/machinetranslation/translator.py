@@ -32,7 +32,7 @@ def initialize_translator() -> LanguageTranslatorV3:
 
         return language_translator
 
-    except ApiException as ex:
+    except ibm_cloud_sdk_core.api_exception.ApiException as ex:
 
             print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
         
