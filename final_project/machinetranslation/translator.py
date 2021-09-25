@@ -2,10 +2,10 @@
 module for initializing IBM Watson Language Translator 
 """
 import json
-from ibm_watson import LanguageTranslatorV3
-from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 import os
 import sys, traceback
+from ibm_watson import LanguageTranslatorV3
+from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
 from ibm_watson import ApiException
 from dotenv import load_dotenv
 
@@ -79,7 +79,6 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
 try:
     enText = 'This is a shiny day.'
     frText = 'C\'est un jour soleil.'
-
     tlator = initialize_translator()
     trToFr = english_to_french(enText, tlator)
     #trToEn = french_to_english(frText, tlator)

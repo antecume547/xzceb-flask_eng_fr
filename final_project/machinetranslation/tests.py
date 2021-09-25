@@ -1,18 +1,6 @@
 import unittest
 from translator import *
 
-#from dotenv import load_dotenv
-#from ibm_watson import LanguageTranslatorV3
-#from ibm_cloud_sdk_core.authenticators import IAMAuthenticator
-
-
-#get envars for tests
-#load_dotenv()
-#
-##global constants for tests
-#APIKEY = os.environ['APIKEY']
-#URL = os.environ['URL']
-#API_VERSION = os.environ['API_VERSION']
 
 class TestIBMTranslator(unittest.TestCase):
 
