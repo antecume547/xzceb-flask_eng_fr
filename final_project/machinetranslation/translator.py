@@ -22,23 +22,14 @@ def initialize_translator() -> LanguageTranslatorV3:
     Function for instantiate the Translator. It gets global variables to authenticating and
     return with translator instance.
     """
-    try:
-        authenticator = IAMAuthenticator(APIKEY)
-        language_translator = LanguageTranslatorV3(
-        version=API_VERSION,
-        authenticator=authenticator)
-        uri = os.environ['URL'] + 'some_trail'
-        language_translator.set_service_url(uri)
+    authenticator = IAMAuthenticator(APIKEY)
+    language_translator = LanguageTranslatorV3(
+    version=API_VERSION,
+    authenticator=authenticator)
+    language_translator.set_service_url(URL)
 
-        return language_translator
+    return language_translator
 
-    except ibm_cloud_sdk_core.api_exception.ApiException as ex:
-
-            print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-        
-    except Exception as ex:
-            print(ex)
-            print(traceback.format_exc())
 
 def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
     """
@@ -77,10 +68,8 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
 #
 #except ApiException as ex:
 #
-#    if type(ex) == ApiException:
 #        print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
-#    else:
+#    
+#except Exception as ex:
 #        print(ex)
 #        print(traceback.format_exc())
-
-
