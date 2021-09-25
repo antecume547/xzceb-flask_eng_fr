@@ -14,7 +14,7 @@ class TestIBMTranslator(unittest.TestCase):
     def test_french_to_english(self):
         URL = os.environ['URL']
         translator_instance = initialize_translator();
-        print(type(translator_instance))
+        
         if translator_instance == None:
             raise Exception('The instance of translator has not initialized!')
        
@@ -30,9 +30,10 @@ class TestIBMTranslator(unittest.TestCase):
         expected_val = 'Root'
         self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
         
-        test_val = None
-        expected_val = None
-        self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
+        with self.assertRaises(ValueError)
+            test_val = None
+            expected_val = None
+            self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
 
 def test_english_to_french(self):
         URL = os.environ['URL']
