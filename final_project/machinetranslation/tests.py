@@ -1,13 +1,13 @@
 import unittest
-from translator import *
-from ibm_watson import ApiException
-URL = os.environ['URL'] + 'some_tail'
+import translator
+#from translator import *
 class TestIBMTranslator(unittest.TestCase):
 
     def test_initialize_translator(self):
         self.assertIsInstance(initialize_translator(), LanguageTranslatorV3)
         
         with self.assertRaises(ApiException):
+            URL = os.environ['URL'] + 'some_tail'
             print(URL)
             initialize_translator()
     
