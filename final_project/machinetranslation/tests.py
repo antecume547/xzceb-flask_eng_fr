@@ -30,7 +30,7 @@ class TestIBMTranslator(unittest.TestCase):
         expected_val = 'Root'
         self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
         
-        with self.assertRaises(ValueError)
+        with self.assertRaises(ValueError):
             test_val = None
             expected_val = None
             self.assertEqual(french_to_english(test_val, translator_instance)['translations'][0]['translation'], expected_val)
