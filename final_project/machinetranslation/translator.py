@@ -40,7 +40,7 @@ def english_to_french(text:str, translator: LanguageTranslatorV3) -> dict:
             text=text,
             model_id=model_id,
             source=source_lang).get_result()
-    print(json.dumps(res, indent=2, ensure_ascii=False))
+#    print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
     
 
@@ -54,7 +54,7 @@ def french_to_english(text:str, translator: LanguageTranslatorV3) -> dict:
             text=text,
             model_id=model_id,
             source=source_lang).get_result()
-    print(json.dumps(res, indent=2, ensure_ascii=False))
+#    print(json.dumps(res, indent=2, ensure_ascii=False))
     return res
 
 #try-catch for debugging purpose 
