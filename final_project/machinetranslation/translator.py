@@ -34,7 +34,7 @@ def initialize_translator() -> LanguageTranslatorV3:
 
 #    except ApiException as ex:
 
-            print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
+#            print ("Method failed with status code " + str(ex.code) + ": " + ex.message)
         
 #    except Exception as ex:
 #            print(ex)
